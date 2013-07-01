@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'pry'
 gem 'rails', '3.2.13'
+gem "therubyracer"
+gem "less-rails"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.5'
+  gem 'mysql2'
   gem 'rspec-rails', '2.11.0'
 end
 
@@ -16,7 +19,8 @@ group :assets do
   gem 'uglifier', '1.2.3'
 end
 
-gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :test do
   gem 'capybara', '1.1.2'

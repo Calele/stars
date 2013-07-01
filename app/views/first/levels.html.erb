@@ -1,0 +1,64 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    
+    <div id="1" class="btn-group">
+
+      <button class "btn" ><a href="/first/categories">Categories</a></button>
+      <button class "btn" ><a href="/">Levels</a></button>
+      <button class "btn" ><a href="/first/settings">Settings</a></button>
+
+    </div>
+
+    <div id="tabs2">
+
+    	<ul class="nav nav-tabs" style=" boarding: 0px;">
+        <li><a class="mycontent" category_id="0" id="0" href="#tabs-0">All</a></li>
+        <% @categories_all.each do |c| %>
+      	 <li><%== "<a class=\"mycontent\" category_id=\"" + (c.id).to_s + "\" id=\"" + (c.id).to_s + "\" href=\"#tabs-" + (c.id).to_s + "\">" %> 
+          <%= c.title %> </a></li>
+        <% end %>
+    	</ul>
+        <div id="test">
+
+          <%= render :partial => "new" %>
+          
+        </div>
+       <a href="#Add" role="button" class="btn" data-toggle="modal" style="position: relative;
+left: 96%;">Add</a>
+      </div>
+
+
+ 
+<!-- Modal -->
+<div id="Add" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="AddLabel">Add/Edit level</h3>
+  </div>
+  <div class="modal-body">
+        <form> 
+          <table>
+            <tr><td>Enabled</td><td><input id="enabled_level" type="checkbox"></td></tr>
+            <tr><br><td>Difficulty</td><td><input id="difficulty_level" type="text"></td></tr> 
+            <tr><td>Category</td><td><input id="category_level" type="text"></td></tr> 
+            <tr><td>Image URL</td><td><input id="image_url_level" type="url"></td></tr> 
+            <tr><td>First Name</td><td><input id="first_name_level" type="text"></td></tr> 
+            <tr><td>Last Name</td><td><input id="last_name_level" type="text"></td></tr>
+            <tr><td>Band Name</td><td><input id="band_name_level" type="text"></td></tr>
+            <tr><td>Title</td><td><input id="title_level" type="text"></td></tr>
+            <tr><td>Question</td><td><input id="question_level" type="text"></td></tr>
+            <tr><td>Fun Fact</td><td><input id="fun_fact_enabled_level" type="checkbox"></td></tr>
+              <tr><td></td><td><textarea id="fun_fact_level" type="text"></textarea></td></tr>
+            <tr><td>Wikipedia</td><td><input id="wiki_enabled_level" type="checkbox"></td><tr>
+            <tr><td></td><td><input id="wiki_level" type="url"></td><tr>    
+            <tr><td><input id="btn2" type="submit" class="btn"></td><tr>  
+              <td>
+          </table>
+        </form>  
+  </div>
+</div>
+  </body>
+</html>

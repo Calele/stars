@@ -1,4 +1,24 @@
 Stars::Application.routes.draw do
+
+  root :to => 'first#levels'
+
+  get "first/levels/:category_id" => "first#levels"
+
+  get "first/categories"
+
+  get "first/settings"
+
+  post "first/tables"
+
+  post "first/levels"
+  
+  get "first/new"
+
+  get "first/new/:category_id" => "first#new"
+
+  post "first/new"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +68,6 @@ Stars::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

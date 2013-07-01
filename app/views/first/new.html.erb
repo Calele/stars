@@ -1,0 +1,33 @@
+    <%== "<div  id=\"tabs-" + (@t).to_s + "\">" %>
+          <ul id="sortable1" class="connectedSortable ui-helper-reset" >
+            <% @levels.each do |l| %>
+                <li class="ui-state-default">
+                  <table class="table1">
+                    <tr>
+                      <td id="l_id" <%== "attr=\"" + (l.id).to_s + "\"" %> ><%= l.id %></td>
+                      <td id="l_difficulty"><%= l.difficulty %></td>
+                      <input type="hidden" id="l_category_id" <%= "value=\"" + l.category_id.to_s + "\""%> ></input>
+                      <td id="l_img_url"><%=="<img width=33px src=\"" + (l.img_url).to_s + "\"/>"%></td>
+                      <td id="l_first_name"><%= l.first_name %></td>
+                      <td id="l_last_name"><%= l.last_name %></td>
+                      <td id="l_stage_name"><%= l.stage_name %></td>
+                      <td id="l_band_name"><%= l.band_name %></td>
+                      <input type="hidden" id="l_title_id" <%= "value=\"" + l.title_id.to_s + "\""%> ></input>
+                      <input type="hidden" id="l_question_id" <%= "value=\"" + l.question_id.to_s + "\""%> ></input>
+                      <% if l.fun_fact_enabled == true %>
+                        <%== "<td id=\"l_fun_fact\" title=\"" + (l.fun_fact).to_s + "\">" + (l.fun_fact).to_s + "</td>" %>
+                      <% else %>
+                        <td></td>
+                      <% end %>
+
+                      <% if l.wiki_enabled == true %>
+                        <%== "<td id=\"l_wiki\" title=\"" + (l.wiki).to_s + "\">" + (l.wiki).to_s + "</td>" %>
+                      <% else %>
+                        <td></td>
+                      <% end %>
+                    </tr>
+                  </table>
+                </li>
+            <% end %>
+          </ul>
+        </div>

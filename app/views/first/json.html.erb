@@ -1,0 +1,34 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+
+
+    <div id="1" class="btn-group">
+
+      <button class "btn" ><a href="/first/categories">Categories</a></button>
+      <button class "btn" ><a href="/">Levels</a></button>
+      <button class "btn" ><a href="/first/settings">Settings</a></button>
+
+    </div>
+
+    <div id="tabs2">
+
+    	<ul class="nav nav-tabs" style=" boarding: 0px;">
+        <li><a class="mycontent" category_id="0" id="0" href="#tabs-0">All</a></li>
+        <% @categories_all.each do |c| %>
+      	 <li><%== "<a class=\"mycontent\" category_id=\"" + (c.id).to_s + "\" id=\"" + (c.id).to_s + "\" href=\"#tabs-" + (c.id).to_s + "\">" %> 
+          <%= c.title %> </a></li>
+        <% end %>
+    	</ul>
+        <div id="test">
+
+          <%= render partial: "new" %>
+
+        </div>
+       
+      </div>
+
+  </body>
+</html>

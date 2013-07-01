@@ -1,0 +1,7 @@
+{ajaxOtions: {url: "tabs",  
+    cache: false,  
+    success: function(html){  
+        $("#tabs").html(html);
+      }
+    }
+        }

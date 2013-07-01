@@ -1,0 +1,2 @@
+class NavsController < ApplicationController
+end

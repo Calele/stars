@@ -10,4 +10,25 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery.ui.tabs
+ * = require bootstrap_and_overrides
  */
+
+table {
+	table-layout: fixed;
+width: 1450px;
+}
+
+table.table1 td {
+	white-space: nowrap;
+  width: 50px;                   
+  overflow: hidden;
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+div.l_question_id{
+	visibility: hidden;
+	clear: both;
+}
